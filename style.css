@@ -1270,6 +1270,18 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
+.trainer-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s;
+}
+
+.trainer-card:hover .trainer-photo {
+    transform: scale(1.05);
+}
+
 .trainer-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(217, 0, 0, 0.2);
