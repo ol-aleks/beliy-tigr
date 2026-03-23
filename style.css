@@ -153,7 +153,7 @@ h1, h2, h3, h4 {
 /* Для маленьких телефонов - еще больше смещаем */
 @media (max-width: 480px) {
     .hero::before {
-        background-position: 55% center;
+        background-position: 77% center;
     }
 }
 
