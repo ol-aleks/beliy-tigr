@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб карате Киокушинкай | Белый Тигр</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Модальное окно -->
+<div class="modal-overlay" id="projectModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-icon">💻</div>
+        <h2 class="modal-title">Учебный проект</h2>
+        <p class="modal-text">Сайт создан в рамках проекта по Информатике</p>
+        <div class="modal-names">
+            <div class="modal-role">Выполнили:</div>
+            <div class="modal-name">Алексеева Анастасия</div>
+            <div class="modal-name">Татаринова Варвара</div>
+        </div>
+        <div class="modal-teacher">
+            <div>Руководитель:</div>
+            <div class="modal-teacher-name">Щедрина Елизавета Алексеевна</div>
+        </div>
+        <button class="modal-button" onclick="closeModal()">Понятно</button>
+        <div class="modal-symbol">🥋</div>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        const modal = document.getElementById('projectModal');
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('projectModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    window.onload = function() {
+        const modal = document.getElementById('projectModal');
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 100);
+    }
+</script>
+
+<!-- ШАПКА САЙТА -->
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.jpg" alt="Логотип клуба" class="logo-img">
+            <span class="logo-text">КИОКУШИНКАЙ</span>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+				<li><a href="#history" class="nav-link">История</a></li>
+                <li><a href="#about" class="nav-link">О клубе</a></li>
+                <li><a href="#trainers" class="nav-link">Тренеры</a></li>
+                <li><a href="#schedule" class="nav-link">Расписание</a></li>
+                <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="#signup" class="btn btn-red">Записаться</a>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+</header>
+
+<!-- ГЕРОЙ-СЕКЦИЯ -->
+<section id="home" class="hero">
+    <div class="hero-overlay">
+        <div class="container hero-content">
+            <h1 class="hero-title">КЛУБ КАРАТЭ КИОКУШИН</h1>
+            <p class="hero-subtitle">Воспитываем сильных телом и духом</p>
+            <a href="#signup" class="btn btn-red btn-large">ЗАПИСАТЬСЯ НА ПРОБНУЮ ТРЕНИРОВКУ</a>
+        </div>
+    </div>
+</section>
+
+<!-- ИСТОРИЯ КИОКУШИН -->
+<section id="history" class="history-section">
+    <div class="container">
+        <h2 class="section-title">ИСТОРИЯ СОЗДАНИЯ КИОКУШИН</h2>
+        <div class="history-content">
+            <div class="history-text">
+                <p>Киокушин (в переводе с японского — «Общество абсолютной истины») — это стиль карате, основанный в 1950-х годах великим мастером <strong>Масутaцу Оямой</strong>.</p>
+               
+                <p>Масутацу Ояма родился в 1923 году в Корее. С ранних лет он изучал боевые искусства, а в 1938 году переехал в Японию, где поступил в университет Такусёку и продолжил обучение карате. Он тренировался в школе Годзю-рю у мастера Гитина Фунакоси и в школе Сётокан.</p>
+               
+                <p>После Второй мировой войны Ояма удалился в горы, где провёл несколько лет в уединённых тренировках, оттачивая технику и силу духа. Именно там сформировалась философия нового стиля — жёсткого, реалистичного, требующего полной самоотдачи.</p>
+               
+                <div class="history-quote">
+                    <p>"Карате начинается с уважения и заканчивается уважением. Никогда не забывай об этом."</p>
+                    <span>— Масутацу Ояма</span>
+                </div>
+               
+                <p>В 1953 году Ояма открыл первое додзё, которое назвал "Киокушин". Стиль стал известен благодаря своим принципам: реальный контакт, физическая выносливость и духовная закалка. Ояма проводил показательные выступления, сражаясь с быками голыми руками, что привлекло внимание к новому стилю.</p>
+               
+                <p>В 1964 году была основана Международная организация карате Киокушинкай (IKO), которая объединила последователей стиля по всему миру. Сегодня Киокушинкай практикуют в более чем 120 странах, и это один из самых популярных стилей карате в мире.</p>
+            </div>
+            <div class="history-image">
+                <img src="images/oyama-history.jpg" alt="Масутацу Ояма" class="history-img">
+                <p class="history-img-caption">Основатель стиля Масутацу Ояма (1923-1994)</p>
+            </div>
+        </div>
+       
+        <div class="history-timeline">
+            <h3>ВЕХИ ИСТОРИИ</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1923</div>
+                    <div class="timeline-text">Рождение Масутацу Оямы</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1938</div>
+                    <div class="timeline-text">Переезд в Японию, начало обучения карате</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1946-1950</div>
+                    <div class="timeline-text">Уединённые тренировки в горах</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1953</div>
+                    <div class="timeline-text">Открытие первого додзё "Киокушин"</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1964</div>
+                    <div class="timeline-text">Основание Международной организации карате Киокушинкай (IKO)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1994</div>
+                    <div class="timeline-text">Уход из жизни Масутацу Оямы</div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="history-principles">
+            <h3>ОСНОВНЫЕ ПРИНЦИПЫ КИОКУШИН</h3>
+            <div class="principles-list">
+                <div class="principle-item">
+                    <span class="principle-num">01</span>
+                    <div>
+                        <h4>Дух и тело едины</h4>
+                        <p>Тренировки направлены на гармоничное развитие физической силы и духовной стойкости</p>
+                    </div>
+                </div>
+                <div class="principle-item">
+                    <span class="principle-num">02</span>
+                    <div>
+                        <h4>Реальный контакт</h4>
+                        <p>Киокушин славится своими полноконтактными поединками, требующими максимальной самоотдачи</p>
+                    </div>
+                </div>
+                <div class="principle-item">
+                    <span class="principle-num">03</span>
+                    <div>
+                        <h4>Уважение к традициям</h4>
+                        <p>Сохранение японских ритуалов, этикета и философии боевого искусства</p>
+                    </div>
+                </div>
+                <div class="principle-item">
+                    <span class="principle-num">04</span>
+                    <div>
+                        <h4>Постоянное совершенствование</h4>
+                        <p>Путь воина не имеет конца — каждый день стремись стать лучше, чем вчера</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- О КЛУБЕ -->
+<section id="about" class="about-club">
+    <div class="container about-container">
+        <div class="about-content">
+            <h2 class="section-title">НАШ КЛУБ</h2>
+            <p class="about-text">Спортивный клуб «Белый Тигр» — место, где каратэ становится искусством, а упорство ведет к победе. Тренируем тело и закаляем дух.</p>
+            <p class="about-text">Опытные тренеры, атмосфера единомышленников и результат с первой недели. Каратэ для взрослых и детей.</p>
+            <p class="about-text">Проснись хищником — записывайся на тренировку!</p>
+            <ul class="about-list">
+                <li>✓ Современный зал с профессиональным покрытием</li>
+                <li>✓ Занятия для детей от 5 лет</li>
+                <li>✓ Подготовка к соревнованиям и аттестациям</li>
+                <li>✓ Индивидуальный подход к каждому ученику</li>
+            </ul>
+        </div>
+        <div class="about-image">
+            <img src="dojo.jpg" alt="Наш зал" class="about-img">
+        </div>
+    </div>
+</section>
+
+<!-- ТРЕНЕРСКИЙ СОСТАВ -->
+<section id="trainers" class="trainers-section">
+    <div class="container">
+        <h2 class="section-title">ТРЕНЕРСКИЙ СОСТАВ</h2>
+        <p class="section-subtitle">Наши преподаватели — опытные мастера своего дела</p>
+       
+
+        <!-- Сетка с тренерами -->
+        <div class="trainers-grid" id="trainersGrid">
+            <!-- Смыков Юрий Алексеевич -->
+            <div class="trainer-card" data-category="main adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Смыков Юрий Алексеевич</h3>
+                    <div class="trainer-position">Президент СК "Белый Тигр".<br /> 3 Дан. Кандидат в мастера спорта России.</div>
+                </div>
+            </div>
+
+            <!-- Милохина Татьяна Александровна -->
+            <div class="trainer-card" data-category="main children">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Милохина Татьяна Александровна</h3>
+                    <div class="trainer-position">1 Дан. Мастер спорта России.</div>
+                </div>
+            </div>
+
+            <!-- Саргасян Эдуард Араратович -->
+            <div class="trainer-card" data-category="main adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Саргасян Эдуард Араратович</h3>
+                    <div class="trainer-position">Тренер, 2 дан</div>
+                </div>
+            </div>
+
+            <!-- Кудоярова Виктория Геннадьевна -->
+            <div class="trainer-card" data-category="children">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Кудоярова Виктория Геннадьевна</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Ардашев Николай Владимирович -->
+            <div class="trainer-card" data-category="main adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Ардашев Николай Владимирович</h3>
+                    <div class="trainer-position">Тренер, 3 дан</div>
+                </div>
+            </div>
+
+            <!-- Берестнева Екатерина Владимировна -->
+            <div class="trainer-card" data-category="children">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Берестнева Екатерина Владимировна</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Берестнев Дмитрий Геннадьевич -->
+            <div class="trainer-card" data-category="main adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Берестнев Дмитрий Геннадьевич</h3>
+                    <div class="trainer-position">Тренер, 2 дан</div>
+                </div>
+            </div>
+
+            <!-- Шалимов Ярослав Эдуардович -->
+            <div class="trainer-card" data-category="children">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Шалимов Ярослав Эдуардович</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Искандаров Исрафил Равшанович -->
+            <div class="trainer-card" data-category="adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Искандаров Исрафил Равшанович</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Спиридонова Анастасия Сергеевна -->
+            <div class="trainer-card" data-category="children">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Спиридонова Анастасия Сергеевна</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Кузнецов Тихон Юрьевич -->
+            <div class="trainer-card" data-category="adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Кузнецов Тихон Юрьевич</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Кононова Дарья Андреевна -->
+            <div class="trainer-card" data-category="children">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Кононова Дарья Андреевна</h3>
+                    <div class="trainer-position">Тренер, 1 дан</div>
+                </div>
+            </div>
+
+            <!-- Стрельников Евгений Павлович -->
+            <div class="trainer-card" data-category="adult">
+                <div class="trainer-photo-placeholder">
+                    <span>🥋</span>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="trainer-name">Стрельников Евгений Павлович</h3>
+                    <div class="trainer-position">Тренер, 2 дан</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- РАСПИСАНИЕ -->
+<section id="schedule" class="schedule-preview">
+    <div class="container">
+        <h2 class="section-title">РАСПИСАНИЕ ЗАНЯТИЙ</h2>
+        <div class="schedule-table">
+            <div class="schedule-row schedule-header">
+                <div>Группа</div>
+                <div>Понедельник</div>
+                <div>Среда</div>
+                <div>Пятница</div>
+            </div>
+            <div class="schedule-row">
+                <div class="group-name">Младшая смена (5-7 лет)</div>
+                <div>17:00 - 18:30</div>
+                <div>17:00 - 18:30</div>
+                <div>17:00 - 18:30</div>
+            </div>
+            <div class="schedule-row">
+                <div class="group-name">Средняя смена (8-10 лет)</div>
+                <div>18:30 - 19:50</div>
+                <div>18:30 - 19:50</div>
+                <div>18:30 - 19:50</div>
+            </div>
+            <div class="schedule-row">
+                <div class="group-name">Старшая смена (от 11 лет)</div>
+                <div>20:00 - 22:00</div>
+                <div>20:00 - 22:00</div>
+                <div>20:00 - 22:00</div>
+            </div>
+        </div>
+        <div class="schedule-note">
+            <p>Стоимость абонемента на месяц — 3000₽</p>
+        </div>
+    </div>
+</section>
+
+<!-- ГАЛЕРЕЯ -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">ФОТОГАЛЕРЕЯ</h2>
+        <p class="section-subtitle">Моменты наших тренировок, соревнований и аттестаций</p>
+       
+        <!-- Сетка галереи -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Фотографии будут добавлены через JavaScript -->
+        </div>
+       
+        <!-- Кнопка "Загрузить еще" -->
+        <div class="gallery-loadmore" id="loadMoreBtn" style="display: none;">
+            <button class="btn btn-red">Загрузить еще</button>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox для просмотра фото в полном размере -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- КОНТАКТЫ -->
+<section id="contacts" class="contacts-section">
+    <div class="container">
+        <h2 class="section-title">КОНТАКТЫ</h2>
+        <div class="contacts-grid">
+            <div class="contacts-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Адрес</h3>
+                        <p>г. Липецк, ул. Стаханова, 17, школа №68</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Телефон</h3>
+                        <p>+7 (000) 000-00-00</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@beliy-tigr.ru</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div>
+                        <h3>Соцсети</h3>
+                        <p>Telegram: @kyokushin_lipetsk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form" id="signup">
+                <h3>Записаться на пробную тренировку</h3>
+                <form>
+                    <input type="text" placeholder="Ваше имя" class="form-input">
+                    <input type="tel" placeholder="Телефон" class="form-input">
+                    <select class="form-input">
+                        <option>Выберите группу</option>
+                        <option>Дети 5-7 лет</option>
+                        <option>Дети 8-10 лет</option>
+                        <option>Подростки от 11 лет</option>
+                        <option>Взрослые</option>
+                    </select>
+                    <button type="submit" class="btn btn-red btn-block">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A123456789&source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="Логотип" class="footer-logo-img">
+                <span>КИОКУШИНКАЙ</span>
+            </div>
+            <p class="footer-text">Клуб карате Киокушинкай в Липецке</p>
+        </div>
+        <div class="footer-col">
+            <h4>Контакты</h4>
+            <p>📍 г. Липецк, ул. Стаханова, 17</p>
+            <p>📞 +7 (000) 000-00-00</p>
+            <p>✉ info@beliy-tigr.ru</p>
+        </div>
+        <div class="footer-col">
+            <h4>Навигация</h4>
+            <ul class="footer-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О клубе</a></li>
+                <li><a href="#trainers">Тренеры</a></li>
+                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Мы в соцсетях</h4>
+            <div class="social-links">
+                <a href="#" class="social-link">💬 Telegram</a>
+                <a href="#" class="social-link">📷 Instagram</a>
+                <a href="#" class="social-link">📱 ВКонтакте</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2026 Клуб Киокушин, г. Липецк. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Мобильное меню
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+   
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+
+    // Плавная прокрутка к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Закрываем мобильное меню после клика
+                if (nav) {
+                    nav.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    // Подсветка активного пункта меню при скролле
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href').substring(1);
+            if (href === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Фильтр тренеров по категориям
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const trainerCards = document.querySelectorAll('.trainer-card');
+
+    if (categoryBtns.length > 0) {
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убираем active у всех кнопок
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Добавляем active текущей
+                this.classList.add('active');
+               
+                const category = this.dataset.category;
+               
+                trainerCards.forEach(card => {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategories = card.dataset.category.split(' ');
+                        if (cardCategories.includes(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    }
+</script>
+<script>
+    // === ГАЛЕРЕЯ С РАБОТАЮЩИМ LIGHTBOX ===
+   
+    // Список фотографий с их категориями и подписями
+    const galleryImages = [
+        { file: "gallery1.jpg", category: "training", caption: "Тренировка в зале" },
+        { file: "gallery2.jpg", category: "competition", caption: "Соревнования в Москве" },
+        { file: "gallery3.jpg", category: "exam", caption: "Аттестация на пояса" },
+        { file: "gallery4.jpg", category: "kids", caption: "Детская группа на тренировке" },
+        { file: "gallery5.jpg", category: "training", caption: "Отработка ударов" },
+        { file: "gallery6.jpg", category: "competition", caption: "Награждение победителей" },
+        { file: "gallery7.jpg", category: "exam", caption: "Экзамен на черный пояс" },
+        { file: "gallery8.jpg", category: "kids", caption: "Дети на аттестации" },
+        { file: "gallery9.jpg", category: "training", caption: "Спарринг" },
+        { file: "gallery10.jpg", category: "competition", caption: "Команда на турнире" }
+    ];
+
+    let currentImages = [...galleryImages];
+    let visibleCount = 6; // Показываем первые 6 фото
+    const imagesPerLoad = 4; // Добавляем по 4 фото при нажатии "Загрузить еще"
+
+    // Функция отображения галереи
+    function renderGallery() {
+        const galleryGrid = document.getElementById('galleryGrid');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+       
+        if (!galleryGrid) return;
+       
+        // Отображаем только видимые фото
+        const visibleImages = currentImages.slice(0, visibleCount);
+       
+        // Очищаем сетку
+        galleryGrid.innerHTML = '';
+       
+        // Добавляем фотографии
+        visibleImages.forEach((img, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.setAttribute('data-category', img.category);
+            galleryItem.setAttribute('data-index', index);
+           
+            galleryItem.innerHTML = `
+                <img src="images/${img.file}" alt="${img.caption}" class="gallery-img" onerror="this.src='images/placeholder.jpg'">
+                <div class="gallery-overlay">
+                    <span>${img.caption}</span>
+                </div>
+            `;
+           
+            // Добавляем обработчик клика для открытия lightbox
+            galleryItem.addEventListener('click', (function(imageFile, captionText) {
+                return function() {
+                    openLightbox(imageFile, captionText);
+                };
+            })(img.file, img.caption));
+           
+            galleryGrid.appendChild(galleryItem);
+        });
+       
+        // Показываем/скрываем кнопку "Загрузить еще"
+        if (loadMoreBtn) {
+            if (visibleCount < currentImages.length) {
+                loadMoreBtn.style.display = 'block';
+            } else {
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+    }
+
+    // Функция загрузки еще фото
+    function loadMoreImages() {
+        visibleCount += imagesPerLoad;
+        renderGallery();
+    }
+
+    // Lightbox функции
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    function openLightbox(imageFile, caption) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = `images/${imageFile}`;
+        if (lightboxCaption) lightboxCaption.textContent = caption;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Фильтрация галереи
+    function filterGallery(category) {
+        if (category === 'all') {
+            currentImages = [...galleryImages];
+        } else {
+            currentImages = galleryImages.filter(img => img.category === category);
+        }
+        visibleCount = 6; // Сбрасываем счетчик
+        renderGallery();
+    }
+
+    // Инициализация галереи после загрузки страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        renderGallery();
+       
+        // Обработчики фильтров
+        const filterBtns = document.querySelectorAll('.gallery-cat-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убираем активный класс у всех кнопок
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Добавляем активный класс текущей
+                this.classList.add('active');
+               
+                const filter = this.getAttribute('data-filter');
+                filterGallery(filter);
+            });
+        });
+       
+        // Обработчик кнопки "Загрузить еще"
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', loadMoreImages);
+        }
+       
+        // Обработчики lightbox
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+        if (lightbox) {
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+       
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    });
+</script>
+</body>
+</html>
